@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Time slot:</b>
+  <%= @schedule.time_slot %>
+</p>
+
+<p>
+  <b>Available:</b>
+  <%= @schedule.available %>
+</p>
+
+
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Back', schedules_path %>
