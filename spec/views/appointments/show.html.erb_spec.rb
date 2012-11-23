@@ -4,7 +4,7 @@ describe "appointments/show" do
   before(:each) do
     @appointment = assign(:appointment, stub_model(Appointment,
       :doctor_id => 1,
-      :time_id => 2
+      :schedule_id => 2
     ))
   end
 

@@ -24,7 +24,7 @@ describe AppointmentsController do
   # Appointment. As you add validations to Appointment, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "doctor_id" => "1" }
+    { :doctor_id => 1, :date => 5.days.ago, :schedule_id => 1 }
   end
 
   # This should return the minimal set of values that should be in the session

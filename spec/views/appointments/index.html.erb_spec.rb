@@ -5,11 +5,11 @@ describe "appointments/index" do
     assign(:appointments, [
       stub_model(Appointment,
         :doctor_id => 1,
-        :time_id => 2
+        :schedule_id => 2
       ),
       stub_model(Appointment,
         :doctor_id => 1,
-        :time_id => 2
+        :schedule_id => 2
       )
     ])
   end
