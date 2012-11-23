@@ -1,5 +1,12 @@
 require 'spec_helper'
 
 describe Doctor do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe "Validation Macros" do
+        it {should validate_presence_of(:first_name)}
+        it {should validate_presence_of(:last_name)}
+        it {should validate_presence_of(:email)}
+        it {should validate_presence_of(:phone)}
+        it {should validate_presence_of(:specialization)}
+        it {should validate_presence_of(:gender)}
+    end
 end
