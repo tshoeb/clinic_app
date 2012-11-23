@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121123014711) do
+ActiveRecord::Schema.define(:version => 20121123022622) do
 
   create_table "appointments", :force => true do |t|
     t.integer  "doctor_id"
@@ -35,8 +35,9 @@ ActiveRecord::Schema.define(:version => 20121123014711) do
   create_table "schedules", :force => true do |t|
     t.string   "time_slot"
     t.boolean  "available"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "appointment_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
 end

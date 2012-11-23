@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Doctor do
-  describe "Validation Macros" do
+  	describe "Validation Macros" do
         it {should validate_presence_of(:first_name)}
         it {should validate_presence_of(:last_name)}
         it {should validate_presence_of(:email)}
@@ -29,6 +29,9 @@ describe Doctor do
     end
     describe "Rejects bad gender" do
         it {should_not allow_value("bad").for(:gender)}
+    end
+    it "should have the correct associations" do
+        should have_many(:appointments)
     end
 	describe "All factories are properly created" do
 	    before(:each) do
