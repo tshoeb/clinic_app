@@ -15,7 +15,7 @@ describe Appointment do
         it {should validate_presence_of(:schedule_id)}
     end
   	it "should have the correct associations" do
-        should belong_to(:schedule)
+        should have_one(:schedule)
         should belong_to(:doctor)
     end
     describe "Testing Scopes" do
