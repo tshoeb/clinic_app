@@ -24,7 +24,7 @@ describe AppointmentsController do
   # Appointment. As you add validations to Appointment, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { :doctor_id => 1, :date => 5.days.ago, :schedule_id => 1 }
+    { :date => 5.days.ago, :doctor_id => 1, :patient_id => 1, :schedule_id => 1}
   end
 
   # This should return the minimal set of values that should be in the session
@@ -89,14 +89,14 @@ describe AppointmentsController do
       it "assigns a newly created but unsaved appointment as @appointment" do
         # Trigger the behavior that occurs when invalid params are submitted
         Appointment.any_instance.stub(:save).and_return(false)
-        post :create, {:appointment => { "doctor_id" => "invalid value" }}, valid_session
+        post :create, {:appointment => { "patient_id" => "invalid value" }}, valid_session
         assigns(:appointment).should be_a_new(Appointment)
       end
 
       it "re-renders the 'new' template" do
         # Trigger the behavior that occurs when invalid params are submitted
         Appointment.any_instance.stub(:save).and_return(false)
-        post :create, {:appointment => { "doctor_id" => "invalid value" }}, valid_session
+        post :create, {:appointment => { "patient_id" => "invalid value" }}, valid_session
         response.should render_template("new")
       end
     end
@@ -110,8 +110,8 @@ describe AppointmentsController do
         # specifies that the Appointment created on the previous line
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
-        Appointment.any_instance.should_receive(:update_attributes).with({ "doctor_id" => "1" })
-        put :update, {:id => appointment.to_param, :appointment => { "doctor_id" => "1" }}, valid_session
+        Appointment.any_instance.should_receive(:update_attributes).with({ "patient_id" => "1" })
+        put :update, {:id => appointment.to_param, :appointment => { "patient_id" => "1" }}, valid_session
       end
 
       it "assigns the requested appointment as @appointment" do
@@ -132,7 +132,7 @@ describe AppointmentsController do
         appointment = Appointment.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Appointment.any_instance.stub(:save).and_return(false)
-        put :update, {:id => appointment.to_param, :appointment => { "doctor_id" => "invalid value" }}, valid_session
+        put :update, {:id => appointment.to_param, :appointment => { "patient_id" => "invalid value" }}, valid_session
         assigns(:appointment).should eq(appointment)
       end
 
@@ -140,7 +140,7 @@ describe AppointmentsController do
         appointment = Appointment.create! valid_attributes
         # Trigger the behavior that occurs when invalid params are submitted
         Appointment.any_instance.stub(:save).and_return(false)
-        put :update, {:id => appointment.to_param, :appointment => { "doctor_id" => "invalid value" }}, valid_session
+        put :update, {:id => appointment.to_param, :appointment => { "patient_id" => "invalid value" }}, valid_session
         response.should render_template("edit")
       end
     end

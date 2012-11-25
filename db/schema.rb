@@ -11,9 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121123022622) do
+ActiveRecord::Schema.define(:version => 20121125152013) do
 
   create_table "appointments", :force => true do |t|
+    t.integer  "patient_id"
     t.integer  "doctor_id"
     t.date     "date"
     t.integer  "schedule_id"
