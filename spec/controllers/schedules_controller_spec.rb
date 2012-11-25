@@ -24,7 +24,7 @@ describe SchedulesController do
   # Schedule. As you add validations to Schedule, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    { "time_slot" => "MyString" }
+    { :appointment_id => 1, :available => true, :time_slot => "8 am - 9 am" }
   end
 
   # This should return the minimal set of values that should be in the session

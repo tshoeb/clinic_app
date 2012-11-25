@@ -14,4 +14,9 @@ FactoryGirl.define do
     	date 5.days.ago
     	schedule_id 1
 	end
+	factory :schedule do
+		appointment_id 1
+		available true
+		time_slot "8 am - 9 am"
+	end
 end

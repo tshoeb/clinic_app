@@ -2,12 +2,12 @@ require 'spec_helper'
 
 describe Appointment do
 	before(:each) do
-	        @dentist = FactoryGirl.create(:appointment)
-	        @surgeon = FactoryGirl.create(:appointment, :date => 3.days.ago)
+        @dentist = FactoryGirl.create(:appointment)
+        @surgeon = FactoryGirl.create(:appointment, :date => 3.days.ago)
 	end
 	it "should have valid factories" do
-	        @dentist.should be_valid
-	        @surgeon.should be_valid
+        @dentist.should be_valid
+        @surgeon.should be_valid
 	end
 	describe "Validation Macros" do
         it {should validate_presence_of(:doctor_id)}
@@ -19,7 +19,7 @@ describe Appointment do
         should belong_to(:doctor)
     end
     describe "Testing Scopes" do
-    	 it "should get all the last 'x' number of vaccinations" do
+    	it "should get all the last 'x' number of vaccinations" do
             Appointment.latest(1).size.should == 1
             Appointment.latest(2).size.should == 2
         end
